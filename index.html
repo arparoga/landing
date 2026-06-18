@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARPAROGA — Academia de Arpa Paraguaya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --negro:    #0e0c0a;
+      --crema:    #f5f0e8;
+      --dorado:   #c8a84b;
+      --gris:     #6b6560;
+      --blanco:   #ffffff;
+    }
+
+    body {
+      background: var(--negro);
+      color: var(--crema);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAV */
+    nav {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(200,168,75,0.2);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    nav span {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--gris);
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--crema);
+      max-width: 14ch;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--dorado);
+    }
+
+    .subtitulo {
+      font-size: 1rem;
+      color: var(--gris);
+      max-width: 38ch;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--dorado);
+      color: var(--dorado);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.6rem;
+      border-radius: 2px;
+    }
+
+    /* CUERDA DECORATIVA */
+    .cuerda {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--dorado), transparent);
+      margin: 3rem auto;
+      opacity: 0.5;
+    }
+
+    .nota {
+      font-size: 0.75rem;
+      color: var(--gris);
+      letter-spacing: 0.1em;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--gris);
+      border-top: 1px solid rgba(200,168,75,0.1);
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="#">ARPAROGA</a>
+    <span>Academia de Arpa Paraguaya</span>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Metodología profesional · En línea</p>
+    <h1>Aprendé arpa con <em>método</em> y sin límites</h1>
+    <p class="subtitulo">
+      Una academia diseñada para llevarte desde los primeros acordes hasta un nivel profesional, con guía real y ritmo propio.
+    </p>
+    <span class="badge">Próximamente</span>
+    <div class="cuerda"></div>
+    <p class="nota">Estamos afinando cada detalle. Volvé pronto.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 ARPAROGA &nbsp;·&nbsp; arparoga.com
+  </footer>
+
+</body>
+</html>
