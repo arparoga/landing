@@ -14,6 +14,7 @@
       --dorado:   #c8a84b;
       --gris:     #6b6560;
       --blanco:   #ffffff;
+      --negro-2:  #151210;
     }
 
     body {
@@ -58,7 +59,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 4rem 2rem 2rem;
     }
 
     .eyebrow {
@@ -89,7 +90,7 @@
       color: var(--gris);
       max-width: 38ch;
       line-height: 1.7;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
     .badge {
@@ -106,16 +107,86 @@
     /* CUERDA DECORATIVA */
     .cuerda {
       width: 1px;
-      height: 80px;
+      height: 64px;
       background: linear-gradient(to bottom, transparent, var(--dorado), transparent);
-      margin: 3rem auto;
+      margin: 3rem auto 2.5rem;
       opacity: 0.5;
+    }
+
+    /* PROGRAMA: las 4 etapas, en orden real de avance */
+    .programa {
+      width: 100%;
+      max-width: 640px;
+      margin-bottom: 1rem;
+    }
+
+    .programa-titulo {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 1.5rem;
+    }
+
+    .etapas {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .etapa {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0.5rem;
+      position: relative;
+    }
+
+    .etapa-punto {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--dorado);
+      opacity: 0.85;
+      margin-bottom: 0.9rem;
+    }
+
+    .etapa::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: rgba(200,168,75,0.25);
+      z-index: -1;
+    }
+
+    .etapa:last-child::after { display: none; }
+
+    .etapa-nombre {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--crema);
+      margin-bottom: 0.3rem;
+    }
+
+    .etapa-desc {
+      font-size: 0.68rem;
+      color: var(--gris);
+      letter-spacing: 0.03em;
+      line-height: 1.5;
+      max-width: 14ch;
     }
 
     .nota {
       font-size: 0.75rem;
       color: var(--gris);
       letter-spacing: 0.1em;
+      margin-top: 2.5rem;
     }
 
     /* FOOTER */
@@ -126,6 +197,36 @@
       color: var(--gris);
       border-top: 1px solid rgba(200,168,75,0.1);
       letter-spacing: 0.08em;
+    }
+
+    footer a {
+      color: var(--dorado);
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 560px) {
+      .etapas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.4rem;
+        max-width: 220px;
+        margin: 0 auto;
+      }
+      .etapa {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 0;
+      }
+      .etapa-punto { margin-bottom: 0; margin-right: 0.9rem; }
+      .etapa::after {
+        top: 0;
+        left: 3px;
+        width: 1px;
+        height: calc(100% + 1.4rem);
+      }
+      .etapa-desc { max-width: none; }
     }
   </style>
 </head>
@@ -143,12 +244,40 @@
       Una academia diseñada para llevarte desde los primeros acordes hasta un nivel profesional, con guía real y ritmo propio.
     </p>
     <span class="badge">Próximamente</span>
+
     <div class="cuerda"></div>
+
+    <div class="programa">
+      <p class="programa-titulo">El camino del arpista</p>
+      <div class="etapas">
+        <div class="etapa">
+          <span class="etapa-punto"></span>
+          <span class="etapa-nombre">Afinación</span>
+          <span class="etapa-desc">Oído, cuerdas y primeros sonidos</span>
+        </div>
+        <div class="etapa">
+          <span class="etapa-punto"></span>
+          <span class="etapa-nombre">Postura</span>
+          <span class="etapa-desc">Técnica y base del instrumento</span>
+        </div>
+        <div class="etapa">
+          <span class="etapa-punto"></span>
+          <span class="etapa-nombre">Pulso</span>
+          <span class="etapa-desc">Ritmo, repertorio y soltura</span>
+        </div>
+        <div class="etapa">
+          <span class="etapa-punto"></span>
+          <span class="etapa-nombre">Concierto</span>
+          <span class="etapa-desc">Nivel profesional y escenario</span>
+        </div>
+      </div>
+    </div>
+
     <p class="nota">Estamos afinando cada detalle. Volvé pronto.</p>
   </main>
 
   <footer>
-    &copy; 2025 ARPAROGA &nbsp;·&nbsp; arparoga.com
+    &copy; 2026 ARPAROGA &nbsp;·&nbsp; <a href="https://arparoga.com">arparoga.com</a>
   </footer>
 
 </body>
